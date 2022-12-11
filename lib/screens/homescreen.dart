@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
 import 'package:muiltplay/models/appbanner.dart';
 import 'package:muiltplay/widgets/gameCard.dart';
@@ -15,6 +16,62 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _selectedIndex = 0;
+  late BannerAd _bannerAd;
+  late BannerAd _topAd;
+  bool _isAdLoaded = false;
+  bool _istopLoaded = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _initBannerAd();
+    _initTopBannerAd();
+  }
+
+  void _initBannerAd() {
+    _bannerAd = BannerAd(
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _isAdLoaded = true;
+          });
+        },
+        onAdFailedToLoad: (ad, error) {
+          setState(() {
+            ad.dispose();
+            print("ad failed to show");
+          });
+        },
+      ),
+      request: AdRequest(),
+    );
+    _bannerAd.load();
+  }
+
+  void _initTopBannerAd() {
+    _topAd = BannerAd(
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _istopLoaded = true;
+          });
+        },
+        onAdFailedToLoad: (ad, error) {
+          setState(() {
+            ad.dispose();
+            print("ad failed to sho");
+          });
+        },
+      ),
+      request: AdRequest(),
+    );
+    _topAd.load();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -214,6 +271,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: _isAdLoaded
+          ? Container(
+              height: _bannerAd.size.height.toDouble(),
+              width: _bannerAd.size.width.toDouble(),
+              child: AdWidget(ad: _bannerAd),
+            )
+          : SizedBox(),
     );
   }
 }
