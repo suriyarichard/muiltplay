@@ -16,10 +16,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _selectedIndex = 0;
+  var counter = 0;
   late BannerAd _bannerAd;
   late BannerAd _topAd;
   bool _isAdLoaded = false;
   bool _istopLoaded = false;
+
+  late InterstitialAd _interstitialAd;
+  bool _inAdLoaded = false;
 
   @override
   void initState() {
@@ -27,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _initBannerAd();
     _initTopBannerAd();
+    _initAd();
   }
 
   void _initBannerAd() {
@@ -73,10 +78,71 @@ class _HomeScreenState extends State<HomeScreen> {
     _topAd.load();
   }
 
+  void _initAd() {
+    InterstitialAd.load(
+      adUnitId: "ca-app-pub-3940256099942544/1033173712",
+      request: AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: onAdLoaded,
+        //     onAdLoaded: (ad) {
+        //   _inAdLoaded = true;
+        //   _interstitialAd = ad;
+
+        //   _interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
+        //       onAdDismissedFullScreenContent: (InterstitialAd ad) {
+        //     print('ad dismissed');
+        //     _interstitialAd.dispose();
+        //   }, onAdFailedToShowFullScreenContent: (InterstitialAd ad, adError) {
+        //     print('ad failed');
+        //     _interstitialAd.dispose();
+        //   });
+        // }, onAdFailedToLoad: (error) {
+        //   _interstitialAd.dispose();
+        // }),
+        onAdFailedToLoad: (error) {
+          print('InterstitialAd failed to load: $error');
+        },
+      ),
+    );
+  }
+
+  void onAdLoaded(InterstitialAd ad) {
+    _interstitialAd = ad;
+    _inAdLoaded = true;
+
+    _interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
+      onAdShowedFullScreenContent: (InterstitialAd ad) =>
+          _interstitialAd.dispose(),
+      // print('%ad onAdShowedFullScreenContent.'),
+      onAdDismissedFullScreenContent: (InterstitialAd ad) {
+        _interstitialAd.dispose();
+        print('$ad onAdDismissedFullScreenContent.');
+        // ad.dispose();
+      },
+      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+        _interstitialAd.dispose();
+        print('$ad onAdFailedToShowFullScreenContent: $error');
+        // ad.dispose();
+      },
+      onAdImpression: (InterstitialAd ad) => print('$ad impression occurred.'),
+    );
+    // _interstitialAd.fullScreenContentCallback = FullScreenAdLoadCallback();
+    //   onAdDismissedFullScreenContent:(ad){
+    //     _interstitialAd.dispose();
+    //   }
+    //   // onAdLoaded: (ad) {
+    //   //   _interstitialAd.dispose();
+    //   // },
+    //   // onAdFailedToLoad: (ad, error) {
+    //   //   _interstitialAd.dispose();
+    //   // },
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo.shade50,
+      backgroundColor: Colors.indigo.shade100,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -245,6 +311,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        if (_inAdLoaded && counter == 3) {
+                          _interstitialAd.show();
+                          counter = 0;
+                        } else {
+                          counter++;
+                        }
+                      },
+                      // onPressed: () {
+                      //   if (_inAdLoaded) {
+                      //     _interstitialAd.show();
+                      //   }
+                      // },
+                      child: Text("show ad"))
+                ],
+              )
               // Padding(
               //   padding: const EdgeInsets.all(15.0),
               //   child: Row(
