@@ -115,12 +115,15 @@ class _AllgamesState extends State<Allgames> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  gameCard(
-                    icon:
-                        'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                    title: 'Tic Tac Toc',
-                    color: Colors.indigoAccent,
-                    fontColor: Colors.white,
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/oxgame'),
+                    child: gameCard(
+                      icon:
+                          'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
+                      title: 'Tic Tac Toc',
+                      color: Colors.indigoAccent,
+                      fontColor: Colors.white,
+                    ),
                   ),
                   gameCard(
                     icon:

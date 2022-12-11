@@ -311,24 +311,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        if (_inAdLoaded && counter == 3) {
-                          _interstitialAd.show();
-                          counter = 0;
-                        } else {
-                          counter++;
-                        }
-                      },
-                      // onPressed: () {
-                      //   if (_inAdLoaded) {
-                      //     _interstitialAd.show();
-                      //   }
-                      // },
-                      child: Text("show ad"))
-                ],
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          if (_inAdLoaded && counter == 3) {
+                            _interstitialAd.show();
+                            counter = 0;
+                          } else {
+                            counter++;
+                          }
+                        },
+                        // onPressed: () {
+                        //   if (_inAdLoaded) {
+                        //     _interstitialAd.show();
+                        //   }
+                        // },
+                        child: Text("Show ads"))
+                  ],
+                ),
               )
               // Padding(
               //   padding: const EdgeInsets.all(15.0),
