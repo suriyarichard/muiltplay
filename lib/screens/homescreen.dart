@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 16.0),
-                height: 200,
+                height: 150,
                 child: PageView.builder(
                     onPageChanged: (index) {
                       setState(() {
@@ -144,8 +144,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('see all'),
-                        Icon(Icons.arrow_forward_ios_sharp),
+                        GestureDetector(
+                          onTap: () =>
+                              Navigator.pushNamed(context, '/allgames'),
+                          child: Text(
+                            'see all',
+                            style: TextStyle(fontSize: 15, color: Colors.grey),
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          size: 15,
+                        ),
                       ],
                     )
                   ],
