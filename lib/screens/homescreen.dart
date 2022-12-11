@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(30)),
                       child: const Icon(
                         Icons.grid_view_rounded,
-                        color: Colors.black,
+                        // color: Colors.,
                         size: 35,
                       ),
                     ),
@@ -166,19 +166,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    gameCard(
-                      icon:
-                          'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                      title: 'Tic Tac Toc',
-                      color: Colors.indigoAccent,
-                      fontColor: Colors.white,
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, '/oxgame'),
+                      child: gameCard(
+                        icon:
+                            'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
+                        title: 'Tic Tac Toc',
+                        color: Colors.white,
+                        fontColor: Colors.grey,
+                        // color: Colors.indigoAccent,
+                        // fontColor: Colors.white,
+                      ),
                     ),
                     gameCard(
                       icon:
-                          'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                      title: 'ENTERTAINMENT',
-                      color: Colors.indigoAccent,
-                      fontColor: Colors.white,
+                          'https://assets3.lottiefiles.com/packages/lf20_dV7MKGn5cY.json',
+                      title: 'Loading!!...',
+                      color: Colors.white,
+                      fontColor: Colors.grey,
                     ),
                   ],
                 ),
@@ -191,14 +196,14 @@ class _HomeScreenState extends State<HomeScreen> {
               //       gameCard(
               //         icon:
               //             'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-              //         title: 'ENTERTAINMENT',
+              //         title: 'Tic tac toc',
               //         color: Colors.indigoAccent,
               //         fontColor: Colors.white,
               //       ),
               //       gameCard(
               //         icon:
               //             'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-              //         title: 'ENTERTAINMENT',
+              //         title: 'Tic tac toc',
               //         color: Colors.indigoAccent,
               //         fontColor: Colors.white,
               //       ),

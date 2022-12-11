@@ -92,8 +92,8 @@ class _AllgamesState extends State<Allgames> {
                   ),
                   gameCard(
                     icon:
-                        'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                    title: 'ENTERTAINMENT',
+                        'https://assets10.lottiefiles.com/packages/lf20_2TNH9OeQxN.json',
+                    title: 'Coming soon...',
                     color: Colors.indigoAccent,
                     fontColor: Colors.white,
                   ),
@@ -107,15 +107,15 @@ class _AllgamesState extends State<Allgames> {
                 children: [
                   gameCard(
                     icon:
-                        'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                    title: 'Tic Tac Toc',
+                        'https://assets1.lottiefiles.com/packages/lf20_mcyr8uol.json',
+                    title: 'coming soon...',
                     color: Colors.white,
                     fontColor: Colors.grey,
                   ),
                   gameCard(
                     icon:
-                        'https://assets3.lottiefiles.com/packages/lf20_7ehddyj8.json',
-                    title: 'ENTERTAINMENT',
+                        'https://assets1.lottiefiles.com/packages/lf20_mcyr8uol.json',
+                    title: 'coming soon...',
                     color: Colors.white,
                     fontColor: Colors.grey,
                   ),

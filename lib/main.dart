@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muiltplay/games/xo/tictco.dart';
 import 'package:muiltplay/screens/allGames.dart';
 import 'package:muiltplay/screens/homescreen.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         '/allgames': ((context) => Allgames()),
-        // '/':((context) => Allgames()),
+        '/oxgame': ((context) => GameScreen()),
       },
     );
   }
