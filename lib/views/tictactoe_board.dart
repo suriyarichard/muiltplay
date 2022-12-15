@@ -49,15 +49,24 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () => tapped(index, roomDataProvider),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    // width: 5,
-                    color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  // color: Colors.black,
+                  height: 150,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: MainColor.accentColor,
+                    // border: Border.all(
+                    //     // width: 5,
+                    //     ),
+
+                    // border: Border.all(
+                    //   // width: 5,
+                    //   color: Colors.black,
+                    // ),
                   ),
-                ),
-                child: Expanded(
-                  flex: 3,
                   child: Center(
                     child: AnimatedSize(
                       duration: const Duration(milliseconds: 200),
@@ -69,7 +78,7 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
                             fontSize: 100,
                             shadows: [
                               Shadow(
-                                blurRadius: 40,
+                                // blurRadius: 40,
                                 color:
                                     roomDataProvider.displayElements[index] ==
                                             'O'

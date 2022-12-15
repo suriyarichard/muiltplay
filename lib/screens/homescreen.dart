@@ -310,7 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: gameCard(
                         icon:
                             'https://assets3.lottiefiles.com/packages/lf20_dV7MKGn5cY.json',
-                        title: 'Loading!!...',
+                        title: 'Muilt player',
                         color: Colors.white,
                         fontColor: Colors.grey,
                       ),

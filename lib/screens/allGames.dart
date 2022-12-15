@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
+import 'package:muiltplay/screens/muiltplayer/main_menu_screen.dart';
 import 'package:muiltplay/widgets/gameCard.dart';
 
 class Allgames extends StatefulWidget {
@@ -126,12 +127,16 @@ class _AllgamesState extends State<Allgames> {
                       fontColor: Colors.white,
                     ),
                   ),
-                  gameCard(
-                    icon:
-                        'https://assets10.lottiefiles.com/packages/lf20_2TNH9OeQxN.json',
-                    title: 'Coming soon...',
-                    color: Colors.indigoAccent,
-                    fontColor: Colors.white,
+                  GestureDetector(
+                    onTap: () =>
+                        Navigator.pushNamed(context, MainMenuScreen.routeName),
+                    child: gameCard(
+                      icon:
+                          'https://assets10.lottiefiles.com/packages/lf20_2TNH9OeQxN.json',
+                      title: 'Muilt player ',
+                      color: Colors.indigoAccent,
+                      fontColor: Colors.white,
+                    ),
                   ),
                 ],
               ),

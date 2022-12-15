@@ -21,14 +21,14 @@ class Scoreboard extends StatelessWidget {
               Text(
                 roomDataProvider.player1.nickname,
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 roomDataProvider.player1.points.toInt().toString(),
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   color: Colors.white,
                 ),
               ),
@@ -43,14 +43,14 @@ class Scoreboard extends StatelessWidget {
               Text(
                 roomDataProvider.player2.nickname,
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 roomDataProvider.player2.points.toInt().toString(),
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   color: Colors.white,
                 ),
               ),
