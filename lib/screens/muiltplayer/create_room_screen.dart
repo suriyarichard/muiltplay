@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:muiltplay/resources/socket_methods.dart';
 import 'package:muiltplay/responsive/responsive.dart';
 import 'package:muiltplay/widgets/custom_button.dart';
@@ -16,10 +17,36 @@ class CreateRoomScreen extends StatefulWidget {
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
   final SocketMethods _socketMethods = SocketMethods();
+  late BannerAd _createRoomScreen;
+  bool _createLoaded = false;
+
+  void _createRoomBanner() {
+    _createRoomScreen = BannerAd(
+      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+      adUnitId: 'a-app-pub-3940256099942544/6300978111',
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _createLoaded = true;
+          });
+        },
+        onAdFailedToLoad: (ad, error) {
+          setState(() {
+            ad.dispose();
+            print("ad failed to show");
+          });
+        },
+      ),
+      request: AdRequest(),
+    );
+    _createRoomScreen.load();
+  }
 
   @override
   void initState() {
     super.initState();
+    _createRoomBanner();
     _socketMethods.createRoomSuccessListener(context);
   }
 
@@ -68,6 +95,13 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: _createLoaded
+          ? Container(
+              height: _createRoomScreen.size.height.toDouble(),
+              width: _createRoomScreen.size.width.toDouble(),
+              child: AdWidget(ad: _createRoomScreen),
+            )
+          : SizedBox(),
     );
   }
 }
