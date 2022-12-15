@@ -4,7 +4,7 @@ const http = require("http");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 var server = http.createServer(app);
 const Room = require("./models/room");
 var io = require("socket.io")(server);
