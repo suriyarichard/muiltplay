@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
 import 'package:muiltplay/models/appbanner.dart';
+import 'package:muiltplay/screens/muiltplayer/main_menu_screen.dart';
 import 'package:muiltplay/widgets/gameCard.dart';
 import 'package:muiltplay/widgets/indicator.dart';
 
@@ -303,12 +304,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         // fontColor: Colors.white,
                       ),
                     ),
-                    gameCard(
-                      icon:
-                          'https://assets3.lottiefiles.com/packages/lf20_dV7MKGn5cY.json',
-                      title: 'Loading!!...',
-                      color: Colors.white,
-                      fontColor: Colors.grey,
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(
+                          context, MainMenuScreen.routeName),
+                      child: gameCard(
+                        icon:
+                            'https://assets3.lottiefiles.com/packages/lf20_dV7MKGn5cY.json',
+                        title: 'Loading!!...',
+                        color: Colors.white,
+                        fontColor: Colors.grey,
+                      ),
                     ),
                   ],
                 ),

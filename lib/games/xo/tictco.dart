@@ -4,14 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:muiltplay/constants/colors.dart';
 
-class GameScreen extends StatefulWidget {
-  const GameScreen({super.key});
+class GameScreenHuman extends StatefulWidget {
+  const GameScreenHuman({super.key});
 
   @override
-  State<GameScreen> createState() => _GameScreenState();
+  State<GameScreenHuman> createState() => _GameScreenState();
 }
 
-class _GameScreenState extends State<GameScreen> {
+class _GameScreenState extends State<GameScreenHuman> {
   // ads
   late BannerAd _gameAd;
   late BannerAd _gameBottomAd;
