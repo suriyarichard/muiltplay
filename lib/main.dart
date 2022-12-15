@@ -8,6 +8,7 @@ import 'package:muiltplay/screens/muiltplayer/create_room_screen.dart';
 import 'package:muiltplay/screens/muiltplayer/game_screen.dart';
 import 'package:muiltplay/screens/muiltplayer/join_room_screen.dart';
 import 'package:muiltplay/screens/muiltplayer/main_menu_screen.dart';
+import 'package:muiltplay/utils/colors.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
       create: (context) => RoomDataProvider(),
       child: MaterialApp(
         title: 'Game',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: bgColor,
+        ),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),
         routes: {

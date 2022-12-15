@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muiltplay/constants/colors.dart';
 import 'package:muiltplay/provider/room_data_provider.dart';
 import 'package:muiltplay/resources/socket_methods.dart';
 import 'package:provider/provider.dart';
@@ -51,27 +52,32 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.white24,
+                    // width: 5,
+                    color: Colors.black,
                   ),
                 ),
-                child: Center(
-                  child: AnimatedSize(
-                    duration: const Duration(milliseconds: 200),
-                    child: Text(
-                      roomDataProvider.displayElements[index],
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 100,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 40,
-                              color:
-                                  roomDataProvider.displayElements[index] == 'O'
-                                      ? Colors.red
-                                      : Colors.blue,
-                            ),
-                          ]),
+                child: Expanded(
+                  flex: 3,
+                  child: Center(
+                    child: AnimatedSize(
+                      duration: const Duration(milliseconds: 200),
+                      child: Text(
+                        roomDataProvider.displayElements[index],
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 100,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 40,
+                                color:
+                                    roomDataProvider.displayElements[index] ==
+                                            'O'
+                                        ? MainColor.secondaryColor
+                                        : MainColor.primaryColor,
+                              ),
+                            ]),
+                      ),
                     ),
                   ),
                 ),

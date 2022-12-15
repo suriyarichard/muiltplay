@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:muiltplay/provider/room_data_provider.dart';
 import 'package:muiltplay/widgets/custom_textfield.dart';
+import 'package:muiltplay/widgets/waitingCard.dart';
 import 'package:provider/provider.dart';
 
 class WaitingLobby extends StatefulWidget {
@@ -30,17 +32,58 @@ class _WaitingLobbyState extends State<WaitingLobby> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text('Waiting for a player to join...'),
-        const SizedBox(height: 20),
-        CustomTextField(
-          controller: roomIdController,
-          hintText: '',
-          isReadOnly: true,
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+            // vertical: 10,
+            horizontal: 10),
+        width: 270,
+        height: 450,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(24),
         ),
-      ],
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            const Text(
+              "Waiting for a player to join...",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+            ),
+            Lottie.network(
+                'https://assets10.lottiefiles.com/packages/lf20_2TNH9OeQxN.json'),
+            const SizedBox(height: 30),
+            CustomTextField(
+              controller: roomIdController,
+              hintText: '',
+              isReadOnly: true,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Share the Id to Join",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey,
+                  fontSize: 15),
+            ),
+          ],
+        ),
+      ),
     );
+    //   return Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       const Text('Waiting for a player to join...'),
+    //       const SizedBox(height: 20),
+    // CustomTextField(
+    //         controller: roomIdController,
+    //         hintText: '',
+    //         isReadOnly: true,
+    //       ),
+    //     ],
+    //   );
+    // }
   }
 }

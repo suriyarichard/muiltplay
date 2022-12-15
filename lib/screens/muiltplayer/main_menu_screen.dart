@@ -23,14 +23,25 @@ class MainMenuScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButton(
-              onTap: () => createRoom(context),
-              text: 'Create Room',
+            Text(
+              "Play with your friends",
+              style: TextStyle(fontSize: 30),
             ),
-            const SizedBox(height: 20),
-            CustomButton(
-              onTap: () => joinRoom(context),
-              text: 'Join Room',
+
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: CustomButton(
+                onTap: () => createRoom(context),
+                text: 'Create Room',
+              ),
+            ),
+            // const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: CustomButton(
+                onTap: () => joinRoom(context),
+                text: 'Join Room',
+              ),
             ),
           ],
         ),

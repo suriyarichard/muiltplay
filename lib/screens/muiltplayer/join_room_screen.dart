@@ -5,7 +5,6 @@ import 'package:muiltplay/widgets/custom_button.dart';
 import 'package:muiltplay/widgets/custom_text.dart';
 import 'package:muiltplay/widgets/custom_textfield.dart';
 
-
 class JoinRoomScreen extends StatefulWidget {
   static String routeName = '/join-room';
   const JoinRoomScreen({Key? key}) : super(key: key);
@@ -49,12 +48,12 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const CustomText(
-                shadows: [
-                  Shadow(
-                    blurRadius: 40,
-                    color: Colors.blue,
-                  ),
-                ],
+                // shadows: [
+                // Shadow(
+                //   blurRadius: 40,
+                //   color: Colors.blue,
+                // ),
+                // ],
                 text: 'Join Room',
                 fontSize: 70,
               ),

@@ -15,20 +15,20 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blue,
-            blurRadius: 5,
-            spreadRadius: 2,
-          )
-        ],
-      ),
+      // decoration: const BoxDecoration(
+      //   boxShadow: [
+      //     BoxShadow(
+      //       color: Colors.blue,
+      //       blurRadius: 5,
+      //       spreadRadius: 2,
+      //     )
+      //   ],
+      // ),
       child: TextField(
         readOnly: isReadOnly,
         controller: controller,
         decoration: InputDecoration(
-          fillColor: bgColor,
+          fillColor: textC,
           filled: true,
           hintText: hintText,
         ),
