@@ -28,7 +28,8 @@ class _GameScreenState extends State<GameScreen> {
   void _gameAdScreen() {
     _gameAd = BannerAd(
       size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+      adUnitId: "a-app-pub-3940256099942544/6300978111",
       listener: BannerAdListener(
         onAdLoaded: (ad) {
           setState(() {
@@ -50,7 +51,8 @@ class _GameScreenState extends State<GameScreen> {
   void _gameAdScreenB() {
     _gameBottomAd = BannerAd(
       size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+      adUnitId: 'a-app-pub-3940256099942544/6300978111',
       listener: BannerAdListener(
         onAdLoaded: (ad) {
           setState(() {

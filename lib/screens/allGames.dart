@@ -25,7 +25,8 @@ class _AllgamesState extends State<Allgames> {
 
   void _initTopBannerAd() {
     _topAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+      adUnitId: 'a-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (ad) {

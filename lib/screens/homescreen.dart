@@ -36,7 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _initBannerAd() {
     _bannerAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+      adUnitId: 'a-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
@@ -58,7 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // void _initTopBannerAd() {
   //   _topAd = BannerAd(
-  //     adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+  //     adUnitId: 'ca-app-pub-5353304428164233/2915245904',
+  // adUnitId:'a-app-pub-3940256099942544/6300978111'
   //     size: AdSize.banner,
   //     listener: BannerAdListener(
   //       onAdLoaded: (ad) {
@@ -80,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _initAd() {
     InterstitialAd.load(
-      adUnitId: "ca-app-pub-3940256099942544/1033173712",
+      adUnitId: "ca-app-pub-5353304428164233/6753314913",
       request: AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: onAdLoaded,
@@ -368,4 +370,5 @@ class _HomeScreenState extends State<HomeScreen> {
           : SizedBox(),
     );
   }
+  // https://developers.google.com/android/reference/com/google/android/gms/ads/FullScreenContentCallback
 }
