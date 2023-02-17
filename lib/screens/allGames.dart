@@ -166,11 +166,11 @@ class _AllgamesState extends State<Allgames> {
             SizedBox(
               height: 50,
             ),
-            Container(
-              child: AdWidget(ad: _topAd),
-              height: _topAd.size.height.toDouble(),
-              width: _topAd.size.width.toDouble(),
-            ),
+            // Container(
+            //   child: AdWidget(ad: _topAd),
+            //   height: _topAd.size.height.toDouble(),
+            //   width: _topAd.size.width.toDouble(),
+            // ),
           ]),
         ),
       ),

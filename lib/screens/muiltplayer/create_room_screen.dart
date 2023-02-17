@@ -24,6 +24,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
     _createRoomScreen = BannerAd(
       // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
       adUnitId: 'a-app-pub-3940256099942544/6300978111',
+
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
@@ -95,13 +96,13 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: _createLoaded
-          ? Container(
-              height: _createRoomScreen.size.height.toDouble(),
-              width: _createRoomScreen.size.width.toDouble(),
-              child: AdWidget(ad: _createRoomScreen),
-            )
-          : SizedBox(),
+      // bottomNavigationBar: _createLoaded
+      //     ? Container(
+      //         height: _createRoomScreen.size.height.toDouble(),
+      //         width: _createRoomScreen.size.width.toDouble(),
+      //         child: AdWidget(ad: _createRoomScreen),
+      //       )
+      //     : SizedBox(),
     );
   }
 }

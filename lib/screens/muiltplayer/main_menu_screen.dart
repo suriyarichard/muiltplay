@@ -20,14 +20,19 @@ class MainMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("GameScreen"),
+        actions: [],
+      ),
       body: Responsive(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CustomText(
-              text: 'Play with your',
-              fontSize: 40,
-            ),
+            Text("Play with your"),
+            // const CustomText(
+            //   text: 'Play with your',
+            //   fontSize: 40,
+            // ),
             const CustomText(
               text: 'Friends!!😍',
               fontSize: 40,
@@ -35,17 +40,19 @@ class MainMenuScreen extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.all(30.0),
-              child: CustomButton(
-                onTap: () => createRoom(context),
-                text: 'Create Room ❤️',
+              child: ElevatedButton(
+                // onTap: () => createRoom(context),
+                onPressed: () => createRoom(context),
+                child: Text('Create Room ❤️'),
               ),
             ),
             // const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(30.0),
-              child: CustomButton(
-                onTap: () => joinRoom(context),
-                text: 'Join Room 💞',
+              child: ElevatedButton(
+                // onTap: () => joinRoom(context),
+                onPressed: () => joinRoom(context),
+                child: Text('Join Room 💞'),
               ),
             ),
           ],
