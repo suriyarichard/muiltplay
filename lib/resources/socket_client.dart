@@ -3,9 +3,9 @@ import 'package:socket_io_client/socket_io_client.dart' as IO;
 class SocketClient {
   IO.Socket? socket;
   static SocketClient? _instance;
-
+// https://xogame-ntym.onrender.com
   SocketClient._internal() {
-    socket = IO.io('https://suriyaprakash-z876.onrender.com', <String, dynamic>{
+    socket = IO.io('https://xogame-ntym.onrender.com', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });

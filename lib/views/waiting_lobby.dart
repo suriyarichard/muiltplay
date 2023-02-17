@@ -4,6 +4,7 @@ import 'package:muiltplay/provider/room_data_provider.dart';
 import 'package:muiltplay/widgets/custom_textfield.dart';
 import 'package:muiltplay/widgets/waitingCard.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class WaitingLobby extends StatefulWidget {
   const WaitingLobby({Key? key}) : super(key: key);
@@ -68,6 +69,27 @@ class _WaitingLobbyState extends State<WaitingLobby> {
                   color: Colors.grey,
                   fontSize: 15),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                final id = roomIdController.text;
+                await Share.share(
+                    "Join the game to play with me . Use this ID :   $id");
+              },
+              child: Icon(
+                Icons.share,
+                color: Colors.amber,
+              ),
+            )
+            // GestureDetector(
+            //   onTap: () async {
+            //     final id = roomIdController;
+            //     await Share.share("hello $id");
+            //   },
+            //   child: Icon(
+            //     Icons.share,
+            //     color: Colors.amber,
+            //   ),
+            // ),
           ],
         ),
       ),

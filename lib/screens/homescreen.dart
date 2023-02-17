@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _initBannerAd() {
     _bannerAd = BannerAd(
       // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
-      adUnitId: 'a-app-pub-3940256099942544/6300978111',
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
@@ -318,28 +318,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          if (_inAdLoaded && counter == 3) {
-                            _interstitialAd.show();
-                            counter = 0;
-                          } else {
-                            counter++;
-                          }
-                        },
-                        // onPressed: () {
-                        //   if (_inAdLoaded) {
-                        //     _interstitialAd.show();
-                        //   }
-                        // },
-                        child: Text("Show ads"))
-                  ],
-                ),
-              )
+              // Padding(
+              //   padding: const EdgeInsets.all(20.0),
+              //   child: Row(
+              //     children: [
+              //       ElevatedButton(
+              //           onPressed: () {
+              //             if (_inAdLoaded && counter == 3) {
+              //               _interstitialAd.show();
+              //               counter = 0;
+              //             } else {
+              //               counter++;
+              //             }
+              //           },
+              //           // onPressed: () {
+              //           //   if (_inAdLoaded) {
+              //           //     _interstitialAd.show();
+              //           //   }
+              //           // },
+              //           child: Text("Show ads"))
+              //     ],
+              //   ),
+              // )
               // Padding(
               //   padding: const EdgeInsets.all(15.0),
               //   child: Row(
