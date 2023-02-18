@@ -45,14 +45,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
-                          const Text(
-                            'Suriya',
-                            style: TextStyle(
-                              fontSize: 18,
-                              // color: Colors.indigo,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                          // const Text(
+                          //   'Suriya',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     // color: Colors.indigo,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),
                           CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: 30,
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Text(
                       "Welcome to game world !!!",
                       style: TextStyle(
-                          // color: Colors.grey[500],
+                          color: Colors.black,
                           fontSize: 25,
                           fontWeight: FontWeight.bold),
                     ),
@@ -141,8 +141,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Games",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -158,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.arrow_forward_ios_sharp,
                           size: 15,
+                          color: Colors.grey,
                         ),
                       ],
                     )

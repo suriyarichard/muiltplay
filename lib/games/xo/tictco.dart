@@ -12,65 +12,6 @@ class GameScreenHuman extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreenHuman> {
-  // ads
-  late BannerAd _gameAd;
-  late BannerAd _gameBottomAd;
-  bool _gameLoaded = false;
-  bool _BottomLoaded = false;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _gameAdScreen();
-    _gameAdScreenB();
-  }
-
-  void _gameAdScreen() {
-    _gameAd = BannerAd(
-      size: AdSize.banner,
-      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
-      adUnitId: "a-app-pub-3940256099942544/6300978111",
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _gameLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {
-          setState(() {
-            ad.dispose();
-            print("ad failed to show");
-          });
-        },
-      ),
-      request: AdRequest(),
-    );
-    _gameAd.load();
-  }
-
-  void _gameAdScreenB() {
-    _gameBottomAd = BannerAd(
-      size: AdSize.banner,
-      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
-      adUnitId: 'a-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _BottomLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {
-          setState(() {
-            ad.dispose();
-            print("ad failed to show");
-          });
-        },
-      ),
-      request: AdRequest(),
-    );
-    _gameBottomAd.load();
-  }
-
   bool oTurn = true;
   List<String> displayXO = ['', '', '', '', '', '', '', '', ''];
   List<int> matchedIndexes = [];
@@ -121,11 +62,6 @@ class _GameScreenState extends State<GameScreenHuman> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Container(
-              child: AdWidget(ad: _gameAd),
-              height: _gameAd.size.height.toDouble(),
-              width: _gameAd.size.width.toDouble(),
-            ),
             Expanded(
               flex: 1,
               child: Container(
