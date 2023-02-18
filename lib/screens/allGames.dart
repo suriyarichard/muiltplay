@@ -15,38 +15,6 @@ class Allgames extends StatefulWidget {
 
 class _AllgamesState extends State<Allgames> {
   @override
-  late BannerAd _topAd;
-  bool _istopLoaded = false;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _initTopBannerAd();
-  }
-
-  void _initTopBannerAd() {
-    _topAd = BannerAd(
-      // adUnitId: 'ca-app-pub-5353304428164233/2915245904',
-      adUnitId: 'a-app-pub-3940256099942544/6300978111',
-      size: AdSize.banner,
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _istopLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {
-          setState(() {
-            ad.dispose();
-            print("ad failed to sho");
-          });
-        },
-      ),
-      request: AdRequest(),
-    );
-    _topAd.load();
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo.shade50,
@@ -166,11 +134,6 @@ class _AllgamesState extends State<Allgames> {
             SizedBox(
               height: 50,
             ),
-            // Container(
-            //   child: AdWidget(ad: _topAd),
-            //   height: _topAd.size.height.toDouble(),
-            //   width: _topAd.size.width.toDouble(),
-            // ),
           ]),
         ),
       ),
